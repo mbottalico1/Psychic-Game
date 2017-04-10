@@ -1,5 +1,6 @@
 body {
 	background-color: black;
+	color: white;
 }
 
 #gameImg {
@@ -11,4 +12,14 @@ h1 {
 	font-family: 'Covered By Your Grace', cursive;
 	color: white;
 }
+
+#game {
+	text-align: center;
+	color: white;
+	font-family: 'Aladin', cursive;
+
+}
+
+
+
 

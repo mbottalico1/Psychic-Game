@@ -8,6 +8,25 @@ var guessesSoFar = [];
 
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+var updateGuessesLeft = function() {
+
+	document.querySelector("#guesses").innerHTML = "Guesses Remaining: " + guessesLeft;
+};
+
+var updateLettersGuessed = function() {
+	this.lettersGuessed = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
+};
+
+var updateNumOfGuesses = function() {
+    document.querySelector("#soFar").innerHTML = "Your Guesses: " + guessesSoFar.join(', ');
+};
+
+
+
+
+
+
+
 document.onkeyup = function(event) {
 
         var userGuess = event.key;
@@ -17,4 +36,7 @@ document.onkeyup = function(event) {
             wins++ 
         }
 
-        else if ()
+        else if (guessesLeft === 0) {
+        	losses++
+        }
+
