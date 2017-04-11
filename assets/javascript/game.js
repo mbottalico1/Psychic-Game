@@ -17,20 +17,15 @@ var updateNumOfGuesses = function() {
     document.querySelector("#soFar").innerHTML = "Your Guesses: " + guessesSoFar.join(', ');
 };
 
-var updateWin = function() {
-
-   document.querySelector("#winning").innerHTML = "Wins: " + win]; 
-}
-
-
-
-document.onkeyup = function(event) {
+ 
+ document.onkeyup = function(event) {
 
         var userGuess = event.key;
 
 
         if (userGuess === computerGuess) {
-            wins++ 
+            wins++;
+            document.querySelector("#winning").innerHTML = "Wins: " + win; 
         }
 
         else if (guessesLeft === 0) {
