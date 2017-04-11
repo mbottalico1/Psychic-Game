@@ -13,10 +13,6 @@ var updateGuessesLeft = function() {
 	document.querySelector("#guesses").innerHTML = "Guesses Remaining: " + guessesLeft;
 };
 
-var updateLettersGuessed = function() {
-	this.lettersGuessed = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
-};
-
 var updateNumOfGuesses = function() {
     document.querySelector("#soFar").innerHTML = "Your Guesses: " + guessesSoFar.join(', ');
 };
