@@ -17,9 +17,10 @@ var updateNumOfGuesses = function() {
     document.querySelector("#soFar").innerHTML = "Your Guesses: " + guessesSoFar.join(', ');
 };
 
+var updateWin = function() {
 
-
-
+   document.querySelector("#winning").innerHTML = "Wins: " + win]; 
+}
 
 
 
