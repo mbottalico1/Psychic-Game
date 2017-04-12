@@ -15,55 +15,53 @@ var updateGuessesLeft = function() {
 };
 
 var updateNumOfGuesses = function() {
-    document.querySelector("#soFar").innerHTML = "Your Guesses: " + yourGuesses.join(',');
+    document.querySelector("#soFar").innerHTML = "Your Guesses: " + yourGuesses.join(event.key);
 };
 
 var updatePossibleLetters = function() {
     possibleLetters = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 }
 
-//var reset = function() {
-
- //guesses = 9;
- //guessesLeft = 9;
- 
-
- //updatePossibleLetters = ();
- //updateGuessesLeft = ();
- //updateNumOfGuesses = ();
-
-
-//}
- 
  document.onkeyup = function(event) {
 
+ guessesLeft--;
  yourGuesses.push(userGuess);
   updateGuessesLeft();
-  
-    //updateGuessesLeft = ();
-    //updateNumOfGuesses = ();
+  updateNumOfGuesses();
 
         var userGuess = event.key;
 
-    if (guessesLeft > 0){
+    
         if (userGuess === computerGuess) {
             win++;
             document.querySelector("#winning").innerHTML = "Wins: " + win;
             alert("You win! Congrats!");
-            //reset(); 
+            reset(); 
         
 
         }else if (guessesLeft === 0) {
         	losses++;
-            document.querySelector("losing").innerHTML = "Losses: " + losses;
+            document.querySelector("#losing").innerHTML = "Losses: " + losses;
             alert("You lose!");
-            //reset();
+            reset();
     }
 
         
- }
+ 
 
 };
 
 
+var reset = function() {
+
+ guesses = 9;
+ guessesLeft = 9;
+ yourGuesses = [];
+ 
+ updatePossibleLetters();
+ updateGuessesLeft();
+ updateNumOfGuesses();
+
+}
+ 
 
