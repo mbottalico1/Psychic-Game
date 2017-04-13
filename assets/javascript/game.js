@@ -28,15 +28,17 @@ var updatePossibleLetters = function() {
  yourGuesses.push(userGuess);
   updateGuessesLeft();
   updateNumOfGuesses();
+  updatePossibleLetters();
 
         var userGuess = event.key;
 
     
-        if (userGuess === computerGuess) {
+        if (userGuess === possibleLetters) {
             win++;
             document.querySelector("#winning").innerHTML = "Wins: " + win;
             alert("You win! Congrats!");
-            reset(); 
+            reset();
+
         
 
         }else if (guessesLeft === 0) {
